@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3e23e792-2ddc-4873-a665-2edd6d4491c6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/TodoCheckAll.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TodoCheckAll.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TodoClearCompleted.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TodoClearCompleted.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TodoFiltered.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TodoFiltered.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TodoItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TodoItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TodoList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TodoList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
-    </list>
+    <list default="true" id="3e23e792-2ddc-4873-a665-2edd6d4491c6" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +14,8 @@
       <file leaf-file-name="store.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/store/store.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="839">
-              <caret line="96" column="33" lean-forward="true" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="33" />
+            <state relative-caret-position="650">
+              <caret line="102" column="31" lean-forward="true" selection-start-line="102" selection-start-column="31" selection-end-line="102" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -158,16 +151,15 @@
       <option name="presentableId" value="Default" />
       <updated>1549114578280</updated>
       <workItem from="1549114580942" duration="7378000" />
-      <workItem from="1549126945107" duration="4187000" />
+      <workItem from="1549126945107" duration="4416000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11565000" />
+    <option name="totallyTimeSpent" value="11794000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -314,8 +306,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/store/store.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="839">
-          <caret line="96" column="33" lean-forward="true" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="33" />
+        <state relative-caret-position="650">
+          <caret line="102" column="31" lean-forward="true" selection-start-line="102" selection-start-column="31" selection-end-line="102" selection-end-column="31" />
         </state>
       </provider>
     </entry>

@@ -52,6 +52,9 @@
                 beforeEditCache: '',
             }
         },
+        created() {
+            this.$store.dispatch('retrieveTodos')
+        },
         computed: {
             allChecked() {
                 return this.$store.getters.allChecked
