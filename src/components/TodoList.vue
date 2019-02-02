@@ -50,61 +50,14 @@
                 newTodo: '',
                 idForTodo: 5,
                 beforeEditCache: '',
-                filter: 'all',
-                todos: [
-                    {
-                        'id': 1,
-                        'title': 'Finish Vue',
-                        'completed': false,
-                        'editing': false,
-                    },
-                    {
-                        'id': 2,
-                        'title': 'Take over world',
-                        'completed': false,
-                        'editing': false,
-                    },
-                    {
-                        'id': 3,
-                        'title': 'Learn Vue.js',
-                        'completed': true,
-                        'editing': false,
-                    },
-                    {
-                        'id': 4,
-                        'title': 'Create Laravel API',
-                        'completed': false,
-                        'editing': false,
-                    },
-                ]
             }
         },
-        created() {
-            // eventBus.$on('removedTodo', (index) => this.removeTodo(index));
-            // eventBus.$on('finishedEdit', (data) => this.finishedEdit(data));
-            // eventBus.$on('checkAllChanged', (checked) => this.checkAllTodos(checked));
-            // eventBus.$on('filterChanged', (filter) => this.$store.state.filter = filter);
-            eventBus.$on('clearCompletedTodos', () => this.clearCompleted());
-        },
-        beforeDestroy() {
-            // eventBus.$off('removedTodo');
-            // eventBus.$off('finishedEdit');
-            // eventBus.$off('checkAllChanged');
-            // eventBus.$off('filterChanged');
-            eventBus.$off('clearCompletedTodos');
-        },
         computed: {
-            remaining() {
-                return this.$store.getters.remaining
-            },
             allChecked() {
                 return this.$store.getters.allChecked
             },
             todosFiltered() {
                 return this.$store.getters.todosFiltered
-            },
-            showClearCompletedButton() {
-                return this.$store.getters.showClearCompletedButton
             }
         },
         methods: {
@@ -113,30 +66,14 @@
                     return
                 }
 
-                this.$store.state.todos.push({
+                this.$store.dispatch('addTodo', {
                     id: this.idForTodo,
                     title: this.newTodo,
-                    completed: false,
-                })
+                });
 
-                this.newTodo = ''
-                this.idForTodo++
+                this.newTodo = '';
+                this.idForTodo++;
             },
-            // removeTodo(id) {
-            //     const index = this.$store.state.todos.findIndex(item => item.id === id);
-            //     this.$store.state.todos.splice(index, 1);
-            // },
-            checkAllTodos() {
-                this.$store.state.todos.forEach(
-                    (todo) => todo.completed = event.target.checked
-                )
-            },
-            // clearCompleted() {
-            //     this.$store.state.todos = this.$store.state.todos.filter(todo => !todo.completed)
-            // },
-            finishedEdit(data) {
-                this.$store.state.todos.splice(data.index, 1, data.todo)
-            }
         }
     }
 </script>
