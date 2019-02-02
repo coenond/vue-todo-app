@@ -13,15 +13,16 @@
 <script>
     export default {
         name: 'todo-check-all',
-        props: {
-            allChecked: {
-                type: Boolean,
-                required: true,
+        computed: {
+            allChecked() {
+                return this.$store.getters.allChecked
             }
         },
         methods: {
             checkAllTodos() {
-                eventBus.$emit('checkAllChanged', this.allChecked)
+                this.$store.state.todos.forEach(
+                    (todo) => todo.completed = event.target.checked
+                )
             }
         }
     }

@@ -20,7 +20,7 @@
 
         <div>
             <button @click="pluralize">Plural</button>
-            <span class="remove-item" @click="removeTodo(index)">
+            <span class="remove-item" @click="removeTodo(id)">
                 &times;
             </span>
         </div>
@@ -70,8 +70,9 @@
             }
         },
         methods: {
-            removeTodo(index) {
-                eventBus.$emit('removedTodo', index)
+            removeTodo(id) {
+                const index = this.$store.state.todos.findIndex(item => item.id === id);
+                this.$store.state.todos.splice(index, 1)
             },
             editTodo() {
                 this.beforeEditCache = this.title
@@ -81,16 +82,14 @@
                 if (this.title.trim().length == 0) {
                     this.title = this.beforeEditCache
                 }
-                this.editing = false
-                eventBus.$emit('finishedEdit', {
-                    'index': this.index,
-                    'todo': {
-                        'id': this.id,
-                        'title': this.title,
-                        'completed': this.completed,
-                        'editing': this.editing
-                    }
-                })
+                this.editing = false;
+                const index = this.$store.state.todos.findIndex(item => item.id === this.id);
+                this.$store.state.todos.splice(index, 1, {
+                    'id': this.id,
+                    'title': this.title,
+                    'completed': this.completed,
+                    'editing': this.editing
+                });
             },
             cancelEdit() {
                 this.title = this.beforeEditCache
@@ -101,15 +100,13 @@
             },
             handlePluralize() {
                 this.title = this.title + 's'
-                eventBus.$emit('finishedEdit', {
-                    'index': this.index,
-                    'todo': {
-                        'id': this.id,
-                        'title': this.title,
-                        'completed': this.completed,
-                        'editing': this.editing
-                    }
-                })
+                const index = this.$store.state.todos.findIndex(item => item.id === this.id);
+                this.$store.state.todos.splice(index, 1, {
+                    'id': this.id,
+                    'title': this.title,
+                    'completed': this.completed,
+                    'editing': this.editing
+                });
             }
         }
     }
