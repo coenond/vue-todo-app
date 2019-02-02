@@ -14,8 +14,6 @@
                        :todo="todo"
                        :index="index"
                        :checkAll="allChecked"
-                       @removedTodo="removeTodo"
-                       @finishedEdit="finishedEdit"
             />
         </transition-group>
 
@@ -101,6 +99,10 @@
                     },
                 ]
             }
+        },
+        created() {
+            eventBus.$on('removedTodo', (index) => this.removeTodo(index))
+            eventBus.$on('finishedEdit', (data) => this.finishedEdit(data))
         },
         computed: {
             remaining() {
